@@ -28,8 +28,8 @@ let package = Package(
             name: "AOC22Tests",
             dependencies: ["AOC22"],
             resources: [
-                .process("day1.txt"),
-                .process("day1-example.txt"),
+                .process("Day1/day1-example.txt"),
+                .process("Day1/day1-input.txt"),
             ]),
     ]
 )

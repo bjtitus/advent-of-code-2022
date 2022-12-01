@@ -1,23 +1,15 @@
 import XCTest
 @testable import AOC22
 
-class TestDay1: XCTestCase {
-    func readFile(_ string: String) -> String {
-        guard let dataURL = Bundle.module.url(forResource: string, withExtension: "txt") else {
-            XCTFail("Could not find day1-part1.txt file")
-            return ""
-        }
+class TestDay1: AOCTestCase {
 
-        do {
-            return try String(contentsOf: dataURL, encoding: .utf8)   
-        } catch {
-            XCTFail("Failed reading string from \(dataURL): \(error)")
-            return ""
-        }
+    enum File: String {
+        case example = "day1-example"
+        case input = "day1-input"
     }
 
     func testDay1Part1Example() {
-        let string = readFile("day1-example")
+        let string = readFile(File.example.rawValue)
 
         do {
             let calories = try XCTUnwrap(AOC22.Day1.maxCalories(string))
@@ -29,7 +21,7 @@ class TestDay1: XCTestCase {
     }
 
     func testDay1Part1() {
-        let string = readFile("day1")
+        let string = readFile(File.input.rawValue)
 
         do {
             let calories = try XCTUnwrap(AOC22.Day1.maxCalories(string))
@@ -41,7 +33,7 @@ class TestDay1: XCTestCase {
     }
     
     func testDay1Part2() {
-        let string = readFile("day1")
+        let string = readFile(File.input.rawValue)
 
         do {
             let calories = try XCTUnwrap(AOC22.Day1.maxCalories(string, top: 3))
