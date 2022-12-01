@@ -26,6 +26,10 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "AOC22Tests",
-            dependencies: ["AOC22"]),
+            dependencies: ["AOC22"],
+            resources: [
+                .process("day1.txt"),
+                .process("day1-example.txt"),
+            ]),
     ]
 )
