@@ -24,3 +24,17 @@ I'll also be experimenting with OSLog a bit with custom formatters and other use
 * [`split(whereSeparator: \.isNewline)`](https://developer.apple.com/documentation/createmlcomponents/classificationdistribution/split(maxsplits:omittingemptysubsequences:whereseparator:)#)) is a handy function for splitting using the handy [Character](https://developer.apple.com/documentation/swift/character) properties from "Inspecting a Character".
 * `split(omittingEmptySubsequences: false...)` will keep the empty subsequences around. Otherwise, they are thrown out of the resulting collection. 
 * [`LosslessStringConvertible`](https://developer.apple.com/documentation/swift/losslessstringconvertible#) is a handy protocol for getting types which can be initialized by a string.
+
+
+### Day 2
+
+* Converted `StringParser` to use `ParseStrategy` instead of `LosslessStringConvertible`. Not sure that it's any better but I was interested in the flexible way to specify a format in the `IntegerParseStrategy` and curious about the API. 🤷‍♂️
+* Added a `map` function so the completion block thing isn't needed.
+* `Roshambo` to represent the moves with associated scores and logic to convert between them. A lot of case statements which might be simplified a bit.
+* `RoshamboParseStrategy` to parse the lines in Part 1.
+* `RoshamboResultParseStrategy` to parse the lines in Part 2. 
+
+#### TIL
+
+* [`ParseStrategy`](https://developer.apple.com/documentation/foundation/parsestrategy#). Probably a little overkill for most of these solutions, but it's a nice API for converting a `ParseInput` to a `ParseOutput` and adjust with new formatting options.
+* `value.split(whereSeparator: \.isWhitespace)` could be replaced by `value.split(separator: .whitespace)` with new [`CharacterClass.whitespace`](https://developer.apple.com/documentation/regexbuilder/characterclass/whitespace#), part of `RegexBuilder`
