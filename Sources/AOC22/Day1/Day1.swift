@@ -1,3 +1,4 @@
+import Foundation
 import os
 
 public struct Day1 {
@@ -16,7 +17,7 @@ public struct Day1 {
             }
         }
         
-        StringParser.read(string, Int.self) { calories in
+        StringParser.parse(string, IntegerParseStrategy(format: .percent)) { calories in
             if let calories {
                 // Add to existing Elf
                 let food = Food(calories: calories)
