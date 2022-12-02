@@ -23,7 +23,7 @@ struct StringParser {
                 logger.info("Parsed Line: \(line)")
                 callback(value)
             } catch {
-                logger.error("Error while parsing: \(error)")
+                logger.error("Error while parsing: \(error.localizedDescription)")
                 callback(nil)
             }
         }
@@ -37,7 +37,7 @@ struct StringParser {
                 logger.info("Parsed Line: \(line)")
                 return value
             } catch {
-                logger.error("Error while parsing: \(error)")
+                logger.error("Error while parsing: \(error.localizedDescription)")
                 return nil
             }
         }
