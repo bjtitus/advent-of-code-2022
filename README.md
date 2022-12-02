@@ -37,3 +37,4 @@ I'll also be experimenting with OSLog a bit with custom formatters and other use
 #### TIL
 
 * [`ParseStrategy`](https://developer.apple.com/documentation/foundation/parsestrategy#). Probably a little overkill for most of these solutions, but it's a nice API for converting a `ParseInput` to a `ParseOutput` and adjust with new formatting options.
+* `value.split(whereSeparator: \.isWhitespace)` could be replaced by `value.split(separator: .whitespace)` with new [`CharacterClass.whitespace`](https://developer.apple.com/documentation/regexbuilder/characterclass/whitespace#), part of `RegexBuilder`

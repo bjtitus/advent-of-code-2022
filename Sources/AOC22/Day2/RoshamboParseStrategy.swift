@@ -20,7 +20,8 @@ struct RoshamboParseStrategy: ParseStrategy, Decodable {
         guard value.isEmpty == false else {
             throw RoshamboParseError.empty
         }
-        let plays = value.split(separator: .whitespace)
+
+        let plays = value.split(whereSeparator: \.isWhitespace)
 
         let opponent = Roshambo(challenge: String(plays[0]))
         let response = Roshambo(response: String(plays[1]))
