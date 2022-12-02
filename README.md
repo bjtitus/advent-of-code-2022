@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-A package containing my Swift solutions for Advent of Code 2022.
+A package containing my Swift solutions for [Advent of Code 2022](https://adventofcode.com/2022).
 
 I've gone several weeks into Advent of Code before and often see a lot of the same paradigms pop up:
 * Line by line string parsing
@@ -12,7 +12,7 @@ I may go back to previous days' solutions as I update APIs, so unit tests for ea
 
 I'll also be experimenting with OSLog a bit with custom formatters and other useful tools. Perhaps some custom Instruments will come along for the ride!
 
-### Part 1
+### Day 1
 
 * `StringParser` contains the logic for iterating over the lines in a string and verifying that a type `T` conforming to `LosslessStringConvertible` can be created from each line.
 * `Elf` model to contain the logic for calorie counting. them
