@@ -50,3 +50,12 @@ I'll also be experimenting with OSLog a bit with custom formatters and other use
 * Dealing with Strings, Characters, and Unicode values is still a pain.
 * I wish there was a _good_ way to iterate over `CharacterSet` but I suppose that would make it something more than it is.
 * Learned a bit the `UnicodeScalar` and `UnicodeScalarView`
+
+### Day 4
+
+* `GroupAssignmentsParseStrategy` handles parsing the format of the Elf groups and hands them back as `ClosedRange<Int>`s
+* `overlap` and `clamped` made this one pretty easy.
+* Not sure if it makese sense to check `overlaps` and `clamped` but it seems like it could improve performance.
+
+#### TIL
+* Not a whole lot here. It thought the use of `clamped` with an equality check was relatively clear.

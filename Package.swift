@@ -29,6 +29,8 @@ let package = Package(
             name: "AOC22Tests",
             dependencies: ["AOC22"],
             resources: [
+                .process("Day4/day4-example.txt"),
+                .process("Day4/day4-input.txt"),
                 .process("Day3/day3-example.txt"),
                 .process("Day3/day3-input.txt"),
                 .process("Day2/day2-example.txt"),
